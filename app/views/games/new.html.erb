@@ -1,0 +1,16 @@
+<h1>New Game</h1>
+
+<div id="boxes">
+<%@letters.each do |letter|%>
+    <p><%=letter%></p>
+<%end%>
+
+</div>
+
+
+<%= form_tag("/score", method: "POST") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("play") %>
+<% end %>
+

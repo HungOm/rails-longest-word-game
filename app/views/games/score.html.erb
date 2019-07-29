@@ -1,0 +1,14 @@
+<h1>Results</h1>
+<p>Find me in app/views/games/score.html.erb</p>
+
+<%if !session[:status]%>
+    <p>Sorry but <strong><%=@letter_search%></strong> does not seems to be a valid English word</p>
+<%else%>
+    <%if !session[:win?]%>
+        <p> Sorry <strong><%=@word_match%></strong> dose cant be built out of <strong><%=@letters.split("")%></strong></p>
+    <%else%>
+        <p>"YAA!!  Congratulations! <strong><%=@word.join("")%></strong> is a valid word!</p>
+    <%end%>
+<%end%>
+
+<%= link_to 'player again?',"/new"%> 
